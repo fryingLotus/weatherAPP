@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Weather API</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Weather</h1>
+      <div class="input-container">
+        <form>
+          <input
+            type="text"
+            id="getWeatherData"
+            size="30"
+            placeholder="Enter City/Country"
+          />
+          <button type="submit" id="DisplayData">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+
+      <h1>Night</h1>
+    </div>
+    <div class="loaderBox"><div id="loader" style="display: none"></div></div>
+
+    <div class="weatherCurrentInfo"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,47 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      img {
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
-    <input type="text" id="inputBox" size="30" />
-    <input type="button" value="Generate it!" class="displayCat" /> <br />
-    <img src="#" alt="" />
-    <script>
-      const img = document.querySelector("img");
-      const inputBox = document.getElementById("inputBox");
-      const displayCatBtn = document.querySelector(".displayCat");
-
-      const displayCatFunction = () => {
-        let word = inputBox.value;
-        fetch(
-          `https://api.giphy.com/v1/gifs/translate?api_key=h27nSCCRNxDtyYLARMnZFoMDvJ7Q35Fd&s=${word}`,
-          { mode: "cors" },
-        )
-          .then(function (response) {
-            return response.json();
-          })
-          .catch((error) => {
-            console.error("Invalid API");
-            return Promise.reject("Invalid API");
-          })
-          .then(function (response) {
-            img.src = response.data.images.original.url;
-          })
-          .catch((error) => {
-            console.log("Error:", error);
-          });
-      };
-
-      displayCatBtn.addEventListener("click", displayCatFunction);
-      //TODO
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>${currentLocation.location.country}, ${currentLocation.location.name}</h1>
+  <p>${formattedDate}, ${getOnlyTime}</p>
+  <div class="main-grid">
+    <div class="left-Box">
+      <div class="top-header">
+        <img src="https:${currentLocation.current.condition.icon}" alt="Weather Icon">
+        <h2>${currentLocation.current.temp_c}°C</h2>
+       
+      </div>
+      <h3>${currentLocation.current.condition.text}</h3>
+      <p>Feel like ${currentLocation.current.feelslike_c}°C</p>
+    </div>
+    <div class="right-box">
+      <div class="right-box-item">
+        <h3>Wind Direction</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Wind</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Wind Direction</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Wind Degree</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>UV</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Visbility</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Humidity</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Gust</h3>
+        <p></p>
+      </div>
+      <div class="right-box-item">
+        <h3>Cloud</h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

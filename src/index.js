@@ -5,3 +5,4 @@ const displayWeather = document.getElementById("DisplayData");
 displayWeather.addEventListener("click", (event) => {
     weatherInfo(event)
 });
+// test
